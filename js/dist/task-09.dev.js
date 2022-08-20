@@ -1,6 +1,6 @@
 "use strict";
 
-function randomColor() {
+function itsRundomColor() {
   return "#".concat(Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0));
 }
 
@@ -10,7 +10,7 @@ var body = document.body;
 btn.addEventListener("click", changeColorBody);
 
 function changeColorBody() {
-  var randomColor = randomColor();
+  var randomColor = itsRundomColor();
   body.style.backgroundColor = randomColor;
   textColor.textContent = randomColor;
 }
