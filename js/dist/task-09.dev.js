@@ -1,15 +1,16 @@
 "use strict";
 
-function getRandomHexColor() {
-  return "#".concat(Math.floor(Math.random() * 16777215).toString(16));
+function randomColor() {
+  return "#".concat(Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0));
 }
 
-document.preventDefalut();
+var btn = document.querySelector(".change-color");
+var textColor = document.querySelector(".color");
+var body = document.body;
+btn.addEventListener("click", changeColorBody);
 
-function changeBackground(color) {
-  document.body.style.background = color;
+function changeColorBody() {
+  var randomColor = randomColor();
+  body.style.backgroundColor = randomColor;
+  textColor.textContent = randomColor;
 }
-
-window.addEventListener('load', function () {
-  changeBackground('red');
-});
